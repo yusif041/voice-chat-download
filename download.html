@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1b">
+  <title>Download | Voice-chat-for-everyone</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: #080d1b;
+      color: #edf4ff;
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 40px 20px;
+      background:
+        radial-gradient(ellipse at 50% 0%, #172c55 0, transparent 48%),
+        #080d1b;
+    }
+    main { width: min(100%, 760px); }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #73d9f4;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.5rem); letter-spacing: -.045em; }
+    .intro { margin: 14px 0 32px; color: #afbdd5; line-height: 1.65; }
+    .downloads { display: grid; gap: 16px; }
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px;
+      border: 1px solid #293a5e;
+      border-radius: 18px;
+      background: rgb(18 29 54 / 88%);
+      box-shadow: 0 16px 44px rgb(0 0 0 / 16%);
+    }
+    .card h2 { margin: 0 0 7px; font-size: 1.08rem; }
+    .card p { margin: 0; color: #aebbd1; font-size: .92rem; line-height: 1.5; }
+    .tag {
+      display: inline-block;
+      margin-bottom: 9px;
+      color: #a4b7d6;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .button {
+      flex: 0 0 auto;
+      display: inline-block;
+      padding: 12px 17px;
+      border-radius: 11px;
+      background: linear-gradient(120deg, #35aebc, #7962db);
+      color: white;
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: filter .15s ease, transform .15s ease;
+    }
+    .button:hover { filter: brightness(1.13); transform: translateY(-1px); }
+    .button:focus-visible { outline: 3px solid #9cecff; outline-offset: 3px; }
+    .note {
+      margin: 24px 2px 0;
+      color: #8999b5;
+      font-size: .85rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 540px) {
+      .card { align-items: flex-start; flex-direction: column; gap: 16px; }
+      .button { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Lumen Social</p>
+    <h1>Voice-chat-for-everyone</h1>
+    <p class="intro">Download the game or get the files to build it for your Mac.</p>
+
+    <section class="downloads" aria-label="Game downloads">
+      <article class="card">
+        <div>
+          <span class="tag">Windows · ready to play</span>
+          <h2>Windows game</h2>
+          <p>Standalone 64-bit executable. No Python installation required.</p>
+        </div>
+        <a class="button" href="dist/windows/Voice-chat-for-everyone.exe" download>Download .exe</a>
+      </article>
+
+      <article class="card">
+        <div>
+          <span class="tag">macOS · build kit</span>
+          <h2>Mac build script</h2>
+          <p>Build an Apple Silicon or Intel Mac app. Run it on a Mac with the matching Python architecture.</p>
+        </div>
+        <a class="button" href="build-macos.sh" download="build-macos.sh">Download .sh</a>
+      </article>
+
+      <article class="card">
+        <div>
+          <span class="tag">macOS · game source</span>
+          <h2>Game source</h2>
+          <p>Required by the Mac build script to package the game.</p>
+        </div>
+        <a class="button" href="voice-chat-3D.py" download>Download source</a>
+      </article>
+
+      <article class="card">
+        <div>
+          <span class="tag">macOS · runtime dependencies</span>
+          <h2>Game requirements</h2>
+          <p>Python packages needed to run the game.</p>
+        </div>
+        <a class="button" href="requirements.txt" download>Download requirements</a>
+      </article>
+
+      <article class="card">
+        <div>
+          <span class="tag">macOS · build dependency</span>
+          <h2>Build requirements</h2>
+          <p>Build tool required to create the Mac app.</p>
+        </div>
+        <a class="button" href="requirements-build.txt" download>Download build requirements</a>
+      </article>
+
+      <article class="card">
+        <div>
+          <span class="tag">Build instructions</span>
+          <h2>Windows and Mac setup</h2>
+          <p>Step-by-step build commands and notes about Mac permissions.</p>
+        </div>
+        <a class="button" href="BUILDING.md" download>Download guide</a>
+      </article>
+    </section>
+
+    <p class="note">
+      The Mac .app must be built on macOS; this Windows download page does not include a prebuilt Mac app.
+      For a complete build, keep the downloaded files together and follow the guide. Microphone access is
+      needed for voice chat.
+    </p>
+  </main>
+</body>
+</html>
