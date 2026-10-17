@@ -79,9 +79,54 @@
       font-size: .85rem;
       line-height: 1.6;
     }
+    .secondary-downloads {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    details {
+      margin-top: 20px;
+      border: 1px solid #223456;
+      border-radius: 18px;
+      background: rgb(14 23 44 / 70%);
+      padding: 16px 20px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #9cb8e2;
+      font-size: 0.92rem;
+      user-select: none;
+      transition: color .15s ease;
+    }
+    summary:hover { color: #edf4ff; }
+    .card-sm {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      border: 1px solid #203152;
+      border-radius: 14px;
+      background: rgb(18 29 54 / 60%);
+    }
+    .card-sm h3 { margin: 0 0 3px; font-size: 0.96rem; }
+    .card-sm p { margin: 0; color: #8fa2c2; font-size: 0.82rem; line-height: 1.4; }
+    .button-sm {
+      flex: 0 0 auto;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: #23375f;
+      color: #d6e5ff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .15s ease, color .15s ease;
+    }
+    .button-sm:hover { background: #37538c; color: white; }
     @media (max-width: 540px) {
-      .card { align-items: flex-start; flex-direction: column; gap: 16px; }
-      .button { width: 100%; text-align: center; }
+      .card, .card-sm { align-items: flex-start; flex-direction: column; gap: 14px; }
+      .button, .button-sm { width: 100%; text-align: center; }
     }
   </style>
 </head>
@@ -89,87 +134,84 @@
   <main>
     <p class="eyebrow">Online voice hangout</p>
     <h1>Voice-chat-for-everyone</h1>
-    <p class="intro">Download the Windows game or the complete files to build a Mac app.</p>
+    <p class="intro">Download the standalone executable game for Windows or the Mac build kit to play with spatial 3D voice chat.</p>
 
     <section class="downloads" aria-label="Game downloads">
       <article class="card">
         <div>
           <span class="tag">Windows · ready to play</span>
-          <h2>Windows game</h2>
-          <p>Standalone 64-bit executable. No Python installation required.</p>
+          <h2>Windows game (.exe)</h2>
+          <p>Standalone 64-bit executable compiled from voice-chat-for-everyone.py. Launch and play directly — no Python installation required.</p>
         </div>
-        <a class="button" href="https://www.mediafire.com/file/scjm6h5a6uj539n/Voice-chat-for-everyone.exe/file" target="_blank" rel="noopener noreferrer">Download .exe</a>
-      </article>
-
-      <article class="card">
-        <div>
-          <span class="tag">macOS · standalone app builder</span>
-          <h2>Mac build script</h2>
-          <p>Builds the standalone Mac app on a Mac. Download the complete Mac kit as well.</p>
-        </div>
-        <a class="button" href="https://www.mediafire.com/file/l9p8bm98je7pbp6/build-macos.sh/file" target="_blank" rel="noopener noreferrer">Download .sh</a>
-      </article>
-
-      <article class="card">
-        <div>
-          <span class="tag">Combined Python source</span>
-          <h2>Game and server source</h2>
-          <p>One Python file containing the game, modes, and room server.</p>
-        </div>
-        <a class="button" href="https://www.mediafire.com/file/s3jof263lphjc5n/voice-chat-for-everyone.py/file" target="_blank" rel="noopener noreferrer">Download .py</a>
-      </article>
-
-      <article class="card">
-        <div>
-          <span class="tag">macOS · runtime dependencies</span>
-          <h2>Game requirements</h2>
-          <p>Python packages needed to run and build the game.</p>
-        </div>
-        <a class="button" href="https://www.mediafire.com/file/z6g5klpnj04zbjf/requirements.txt/file" target="_blank" rel="noopener noreferrer">Download requirements</a>
-      </article>
-
-      <article class="card">
-        <div>
-          <span class="tag">macOS · build dependencies</span>
-          <h2>Build requirements</h2>
-          <p>PyInstaller and runtime requirements for creating the Mac app.</p>
-        </div>
-        <a class="button" href="https://www.mediafire.com/file/h3pvroj7ao09iu9/requirements-build.txt/file" target="_blank" rel="noopener noreferrer">Download build requirements</a>
-      </article>
-
-      <article class="card">
-        <div>
-          <span class="tag">Build instructions</span>
-          <h2>Windows and Mac setup</h2>
-          <p>Build commands, architecture notes, and microphone permissions.</p>
-        </div>
-        <a class="button" href="https://www.mediafire.com/file/hxxz5k1729myo4o/BUILDING.md/file" target="_blank" rel="noopener noreferrer">Download guide</a>
-      </article>
-
-      <article class="card">
-        <div>
-          <span class="tag">Online multiplayer setup</span>
-          <h2>Server setup guide</h2>
-          <p>Instructions for hosting a local or internet-accessible game server.</p>
-        </div>
-        <a class="button" href="https://www.mediafire.com/file/1slo2optt5lpj8d/SERVER_SETUP.md/file" target="_blank" rel="noopener noreferrer">Download server guide</a>
+        <a class="button" href="https://www.mediafire.com/file/btj54eqtkg6o2ry/Voice-chat-for-everyone.exe/file" target="_blank" rel="noopener noreferrer">Download .exe</a>
       </article>
 
       <article class="card">
         <div>
           <span class="tag">macOS · complete package</span>
           <h2>Mac build kit</h2>
-          <p>All files required by the Mac build script in one ZIP.</p>
+          <p>All source files and builder script bundled in one ZIP to compile the native macOS .app on Apple Silicon or Intel.</p>
         </div>
-        <a class="button" href="https://www.mediafire.com/file/hvd8vna6rzmxhyy/Voice-chat-for-everyone-mac-build.zip/file" target="_blank" rel="noopener noreferrer">Download Mac kit</a>
+        <a class="button" href="https://www.mediafire.com/file/hts98w18clcpsqf/Voice-chat-for-everyone-mac-build.zip/file" target="_blank" rel="noopener noreferrer">Download Mac kit</a>
       </article>
-
     </section>
 
+    <details>
+      <summary>Source code, server setup & advanced build files</summary>
+      <div class="secondary-downloads">
+        <article class="card-sm">
+          <div>
+            <h3>Combined Python source</h3>
+            <p>Single Python script containing game client, minigames, and room server.</p>
+          </div>
+          <a class="button-sm" href="https://www.mediafire.com/file/nu7yueqdh1t2l78/voice-chat-for-everyone.py/file" target="_blank" rel="noopener noreferrer">Download .py</a>
+        </article>
+
+        <article class="card-sm">
+          <div>
+            <h3>Server setup guide</h3>
+            <p>Guide for hosting private rooms or an internet-accessible VPS room server.</p>
+          </div>
+          <a class="button-sm" href="https://www.mediafire.com/file/1slo2optt5lpj8d/SERVER_SETUP.md/file" target="_blank" rel="noopener noreferrer">Download guide</a>
+        </article>
+
+        <article class="card-sm">
+          <div>
+            <h3>Build instructions</h3>
+            <p>Detailed build commands, architecture notes, and permission settings.</p>
+          </div>
+          <a class="button-sm" href="https://www.mediafire.com/file/hxxz5k1729myo4o/BUILDING.md/file" target="_blank" rel="noopener noreferrer">Download guide</a>
+        </article>
+
+        <article class="card-sm">
+          <div>
+            <h3>Mac build script</h3>
+            <p>Shell script to invoke PyInstaller and apply microphone entitlements.</p>
+          </div>
+          <a class="button-sm" href="https://www.mediafire.com/file/l9p8bm98je7pbp6/build-macos.sh/file" target="_blank" rel="noopener noreferrer">Download .sh</a>
+        </article>
+
+        <article class="card-sm">
+          <div>
+            <h3>Game requirements</h3>
+            <p>List of Python dependencies needed to run the uncompiled source.</p>
+          </div>
+          <a class="button-sm" href="https://www.mediafire.com/file/z6g5klpnj04zbjf/requirements.txt/file" target="_blank" rel="noopener noreferrer">Download requirements</a>
+        </article>
+
+        <article class="card-sm">
+          <div>
+            <h3>Build requirements</h3>
+            <p>PyInstaller and packaging requirements to compile the application.</p>
+          </div>
+          <a class="button-sm" href="https://www.mediafire.com/file/h3pvroj7ao09iu9/requirements-build.txt/file" target="_blank" rel="noopener noreferrer">Download build requirements</a>
+        </article>
+      </div>
+    </details>
+
     <p class="note">
-      The Mac app is built on the Mac by running the downloaded .sh script; the script itself is not a Mac app.
-      Download buttons open files hosted on MediaFire. For internet play, connect to a public game server;
-      127.0.0.1 only works when a server is running on the same computer.
+      The Windows executable runs standalone without Python. The Mac app is generated on macOS by running the build script in the Mac kit.
+      Download buttons open files hosted on MediaFire. For internet multiplayer, connect to a central server or host your own via SERVER_SETUP.md.
     </p>
   </main>
 </body>
